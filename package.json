@@ -1,0 +1,27 @@
+{
+  "name": "telegram-pc-commander",
+  "version": "0.0.1",
+  "description": "Run commands from telegram using your own telegram bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -i node_modules/ index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram",
+    "linux",
+    "commands",
+    "bot"
+  ],
+  "author": "Nathan Mulugeta <nathanmuler2@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "level": "^3.0.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "shelljs": "^0.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
