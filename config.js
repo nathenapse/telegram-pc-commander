@@ -1,5 +1,6 @@
-const ADMIN = process.env.TELEGRAM_USER_ID
+const os = require('os')
 
+const ADMIN = process.env.TELEGRAM_USER_ID
 const DB_PATH = "./db"
 
 const DOWNLOADERS = [
@@ -15,14 +16,14 @@ const YOUTUBE_QUALITY = {
   'ultra': 137
 }
 
-const DOWNLOAD_PATH = '~/Downloads/';
-
+const DOWNLOAD_PATH = os.homedir();
 
 const DEFAULT_DOWNLOADER = 'wget';
 
 const YOUTUBE_DOWNLOADER = 'youtube-dl'
 
 const TORRENT_DOWNLOADER = 'aria'
+
 const DEFAULT_YOUTUBE_QUALITY = 'medium'
 
 module.exports = {

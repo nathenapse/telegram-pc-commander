@@ -1,3 +1,5 @@
+const os = require('os')
+
 module.exports = (db, config, callback) => {
   const data = [
     { type: 'put', key: 'admin', value: process.env.TELEGRAM_USER_ID },
@@ -6,7 +8,7 @@ module.exports = (db, config, callback) => {
     { type: 'put', key: 'torrent_downloader', value: config.DEFAULT_TORRENT_DOWNLOADER },
     { type: 'put', key: 'youtube_downloader', value: config.DEFAULT_YOUTUBE_DOWNLOADER },
     { type: 'put', key: 'quality', value: config.DEFAULT_YOUTUBE_QUALITY },
-    { type: 'put', key: 'pwd', value: '~/' },
+    { type: 'put', key: 'pwd', value: os.homedir() },
     { type: 'put', key: 'initialized', value: true },
   ];
   db.batch(data, err => {

@@ -1,5 +1,6 @@
 const reply = require('./reply')
 const commands = require('./commands')
+const download = require('../commands/download')
 
 module.exports = (bot, config, db) => (msg) => {
   if (msg.chat.id === parseInt(config.ADMIN)) {
@@ -25,8 +26,24 @@ module.exports = (bot, config, db) => (msg) => {
         }
       })
 
-      console.log("text")
     }
+
+    if (msg.audio) {
+      download(bot, config, db, msg, 'audio')
+    }
+
+    if (msg.document) {
+      download(bot, config, db, msg, 'document')
+    }
+
+    if (msg.video) {
+      download(bot, config, db, msg, 'video')
+    }
+
+    if (msg.photo) {
+      download(bot, config, db, msg, 'photo')
+    }
+
   } else {
     console.log("message user does not match admin")
   }

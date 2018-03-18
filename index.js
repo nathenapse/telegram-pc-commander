@@ -4,7 +4,6 @@
 require('dotenv').config()
 const level = require('level')
 const TelegramBot = require('node-telegram-bot-api');
-const shell = require('shelljs');
 /**
  * setup packages
  */
@@ -38,5 +37,4 @@ initialize(db, config, (error) => {
   if (error) {
     throw error
   }
-})
 })

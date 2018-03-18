@@ -23,7 +23,7 @@ module.exports = (bot) => {
   bot.__proto__.sendLongMessage = (id, longMessage, option) => {
     let stringChunk = bot.chunkString(longMessage, 4000)
     return bot.asyncForEach(stringChunk, (message) => {
-        return bot.sendMessage(id, message, option)
-      })
+      return bot.sendMessage(id, message, option)
+    })
   }
 }

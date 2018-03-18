@@ -7,10 +7,11 @@ module.exports = (bot, msg, db) => {
   executor(msg.text)
     .then(({ code, stdout, stderr }) => {
       if (!code) {
-
-        bot.sendLongMessage(msg.chat.id, "Done\n" + stdout + "\n" + stderr, {
-          reply_to_message_id: msg.message_id
-        })
+        bot.sendLongMessage(msg.chat.id,
+          "Done: \n ----------------------- \n " + stdout + "\n" + stderr, {
+            reply_to_message_id: msg.message_id
+          }
+        )
       } else {
         bot.sendLongMessage(msg.chat.id, "Error code: " + code + "\n" + stdout + "\n" + stderr, {
           reply_to_message_id: msg.message_id

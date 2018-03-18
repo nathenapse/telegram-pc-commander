@@ -8,8 +8,6 @@ module.exports = (bot, msg, db, config) => {
       bot.sendMessage(msg.chat.id, 'Something went wrong')
     }
 
-    console.log(YOUTUBE_QUALITY, quality)
-    console.log("quality")
     //validate message is url 
     if (isURL(msg.text)) {
       //get download path

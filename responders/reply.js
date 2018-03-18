@@ -10,7 +10,6 @@ module.exports = (bot, config, db, msg) => {
       return
     }
     if (value) {
-      console.log(value)
       if (value === 'upload') {
         upload(bot, msg, db, config)
         return
